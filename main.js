@@ -1,12 +1,13 @@
+const api_val = config.key;
 const title = ['comedy','action','drama','fantasy','horror','thriller','game','fight','fast','animation'];
 const query = Math.floor(Math.random() *  title.length);
 const choice = title[query];
 
-fetch(`********************`, {
+fetch(`https://imdb8.p.rapidapi.com/auto-complete?q=${choice}`, {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-host": "************************",
-		"x-rapidapi-key": "**************************"
+		"x-rapidapi-host": "imdb8.p.rapidapi.com",
+		"x-rapidapi-key": `${api_val}`
 	}
 })
 .then(response =>  response.json())
